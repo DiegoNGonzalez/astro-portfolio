@@ -1,0 +1,42 @@
+
+---
+import EducationItem from "./EducationItem.astro";
+
+const EDUCATION = [
+  {
+    date: "Marzo 2023 - Presente",
+    title: "Tecnicatura universitaria en Programación - Universidad Tecnológica Nacional FRGP",
+    description:
+      "Logica de programación, diagramas de flujo, C++, POO, manejo de archivos, trabajo en equipo. Aprobadas 10 materias sobre un total de 21. ",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7137951042490609664/",
+  },
+  {
+    date: "Noviembre 2023 - Diciembre 2023",
+    title: "Curso C# nivel 2 - Maxiprograma",
+    description:
+      "Introducción a la plataforma .Net. WinForms. Programación Orientada a Objetos. Conexión a bases de datos. SQL Server. Arquitectura en capas.",
+  },
+  {
+    date: "Julio 2023 - Agosto 2023",
+    title: "Curso C# nivel 2 - Maxiprograma",
+    description:
+      "Introducción a la plataforma .Net. WinForms. Programación Orientada a Objetos. Conexión a bases de datos. SQL Server. Arquitectura en capas.",
+  },
+  {
+    date: "Agosto 2022 - Diciembre 2022",
+    title: "Full Stack Developer c/ Python - Programa Codo a Codo ",
+    description:
+      "Armado y desarrollo de páginas web con HTML, CSS, Javascript. Control de versiones con git y github. Backend con Python. ",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EDUCATION.map((education) => (
+      <li class="mb-10 ms-4">
+        <EducationItem {...education} />
+      </li>
+    ))
+  }
+</ol>

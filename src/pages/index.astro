@@ -1,16 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
-import LinkedinIcon from '../components/icons/Linkedin.astro';
+import LinkedinIcon from '../components/icons/LinkedIn.astro';
 import SocialPill from '../components/SocialPill.astro';
 import GitHubIcon from '../components/icons/Github.astro';
 import MailIcon from '../components/icons/Mail.astro';
+import Education from '../components/Education.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import EducationIcon from '../components/icons/EducationIcon.astro';
 ---
 
 <Layout title="Portfolio de DieGonzalezDev - Desarrollador de Software" description="Gracias por visitar mi portfolio, encontraras mis skills, mis proyectos y medios de contacto. ">
 	<main>
-		<section  class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer class="py-44 pb-20">
 			<img class="rounded-full size-14 mb-4" src="https://drive.google.com/uc?export=view&id=1sie9bj3VN3T4QXMS5iG4E3LU8-YOFYk2" alt="diegonzalez dev photo">
 			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
 				Hey, soy Diego Gonzalez <a href="https://www.linkedin.com/in/diegongonzalez/" target="_blank" class="flex just items-center"><Badge>Disponible para trabajar</Badge></a>
@@ -37,7 +39,14 @@ import MailIcon from '../components/icons/Mail.astro';
 					
 				</li>
 			</ul>
-		</section>
+		</SectionContainer>
+		<SectionContainer id="educacion">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<EducationIcon class="size-7" />
+				Educación
+			</h2>
+			<Education />
+		</SectionContainer>
 			
 	</main>
 </Layout>
