@@ -1,0 +1,80 @@
+---
+import CSharpIcon from './icons/CSharpIcon.astro'
+import SQLServerIcon from './icons/SqlIcon.astro'
+import NetIcon from './icons/NetIcon.astro'
+import CPlusIcon from './icons/CplusIcon.astro'
+import GitHubIcon from './icons/Github.astro'
+import SocialPill from './SocialPill.astro'
+import Github from './icons/Github.astro'
+const TAGS={
+    CSharp:{
+        name:'C#',
+        class:'bg-violet-500 text-white',
+        icon: CSharpIcon
+    },
+    SQLServer:{
+        name:'SQL Server',
+        class:'bg-red-500 text-white',
+        icon: SQLServerIcon
+    },
+    Net:{
+        name:'.Net',
+        class:'bg-indigo-500 text-white',
+        icon: NetIcon
+   
+    },
+    CPlusPlus:{
+        name:'C++',
+        class:'bg-blue-500 text-white',
+        icon: CPlusIcon
+    },
+}
+
+const PROJECTS =[
+    {
+        title: 'Catalogo de productos C#',
+        description: 'Aplicación de escritorio para la gestion de productos de una tienda de electronicos. Cuenta con listado de artículos, la búsqueda de los mismos por distintos criterios y busqueda rapida. Permite agregar, modificar y eliminar artículos',
+        link:'#',
+        github:'https://github.com/DiegoNGonzalez/TPFinalNivel2_GonzalezValenzuela',
+        image: 'https://drive.google.com/uc?export=view&id=18VYXNctraoJE65CiRr9M7ybUIrquNGRe',
+        tags: [TAGS.CSharp,TAGS.Net, TAGS.SQLServer]
+    },
+    {
+        title:'Sistema de gestión de una sala de cine',
+        description:'Aplicación de consola para la gestión de una sala de cine. Tiene la posibilidad de gestionar las salas, las películas y las funciones. Permite la venta de entradas y la visualización de las mismas. Cuenta con un sistema de reportes. Cuenta con un sistema de login y diferencia al usuario Admin del usuario Vendedor',
+        link:'#',
+        github:'https://github.com/DiegoNGonzalez/Proyecto-Laboratorio2-v2',
+        image:'',
+        tags:[TAGS.CPlusPlus]
+    }
+]
+---
+
+{
+    PROJECTS.map(({image,title,description,tags,github}) =>(
+        <article class="pb-10">
+            <h3 class="text-2xl font-semibold dark:text-yellow-800 text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-4 mt-2">
+               {tags.map((tag)=>(
+                <li>
+                    <span  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10 items-center`}>
+                        <tag.icon class="size-8"/>
+                        {tag.name}
+                    </span>
+                </li>
+               ))}
+            </ul>
+            <img
+            loading="lazy" 
+            class="rounded shadow-2xl shadow-white/10 aspect-video" src={image} alt={`Captura de pantalla del proyecto`}>
+            <span class="flex gap-4 mt-8 flex-wrap">
+                
+                <SocialPill href={github}>
+                        <GitHubIcon class="size-4 md:size-6" />
+                        Repositorio
+                </SocialPill>
+            </span>
+        </article>
+    ))
+}
