@@ -1,0 +1,70 @@
+---
+import CSharpIcon from './icons/CSharpIcon.astro'
+import SQLServerIcon from './icons/SqlIcon.astro'
+import NetIcon from './icons/NetIcon.astro'
+import CPlusIcon from './icons/CplusIcon.astro'
+import GitHubIcon from './icons/Github.astro'
+import HtmlIcon from './icons/HtmlIcon.astro'
+import CssIcon from './icons/CssIcon.astro'
+import TailwindIcon from './icons/TailwindIcon.astro'
+import JsIcon from './icons/JsIcon.astro'
+import GitIcon from './icons/GitIcon.astro'
+const TAGS=[
+    {
+        name:'C#',
+        icon: CSharpIcon
+    },
+    {
+        name:'.Net',
+        icon: NetIcon
+   
+    },
+    {
+        name:'C++',
+        icon: CPlusIcon
+    },
+    {
+        name:"HTML",
+        icon: HtmlIcon
+    },
+    {
+        name:"CSS",
+        icon: CssIcon
+    },
+    {
+        name:'Tailwind CSS',
+        icon: TailwindIcon
+    },
+    {
+        name:'JavaScript',
+        icon: JsIcon
+    },
+    {
+        name:'SQL Server',
+        icon: SQLServerIcon
+    },
+    {
+        name:'Git',
+        icon: GitIcon
+    },
+    {
+        name:'GitHub',
+        icon: GitHubIcon
+    },
+    
+    
+    ]
+---
+{TAGS.map((tag) => (
+    <span class="grid w-full min-w-[7rem] transform place-items-center rounded-xl bg-[rgba(132,91,247,0.58)] px-3 py-2 transition-all hover:scale-105 hover:border-blue-gray-100 hover:bg-blue-gray-50 hover:bg-opacity-25 border border-indigo-700">
+    <span class="my-6 grid h-24 w-24 place-items-center">
+        <tag.icon  class="size-14 rounded-xl" />
+            <span class="text-xs text-gray-100">
+            {tag.name}
+            </span>
+    </span>
+</span>
+))
+
+}
+
